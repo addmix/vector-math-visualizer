@@ -1,0 +1,326 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://spatial.gd" type="Script" id=1]
+
+[sub_resource type="Environment" id=1]
+background_mode = 1
+background_color = Color( 0.109804, 0.109804, 0.109804, 1 )
+ambient_light_color = Color( 0.294118, 0.294118, 0.294118, 1 )
+
+[sub_resource type="SpatialMaterial" id=2]
+vertex_color_use_as_albedo = true
+
+[node name="Spatial" type="Spatial"]
+script = ExtResource( 1 )
+vector_width = 0.105
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+margin_right = 324.0
+margin_bottom = 110.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="Control/PanelContainer"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 517.0
+margin_bottom = 203.0
+custom_constants/margin_right = 8
+custom_constants/margin_top = 8
+custom_constants/margin_left = 8
+custom_constants/margin_bottom = 8
+
+[node name="Vectors" type="VBoxContainer" parent="Control/PanelContainer/MarginContainer"]
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 502.0
+margin_bottom = 188.0
+
+[node name="Animation" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/Vectors"]
+margin_right = 494.0
+margin_bottom = 24.0
+
+[node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/Vectors/Animation"]
+margin_top = 5.0
+margin_right = 100.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 100, 0 )
+text = "Tween time"
+clip_text = true
+
+[node name="Time" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/Animation"]
+margin_left = 104.0
+margin_right = 178.0
+margin_bottom = 24.0
+min_value = 1.0
+max_value = 10.0
+step = 0.5
+value = 3.0
+
+[node name="Play" type="Button" parent="Control/PanelContainer/MarginContainer/Vectors/Animation"]
+margin_left = 182.0
+margin_right = 220.0
+margin_bottom = 24.0
+text = "Play"
+
+[node name="XTo" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/Vectors"]
+margin_top = 28.0
+margin_right = 494.0
+margin_bottom = 52.0
+
+[node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/Vectors/XTo"]
+margin_top = 5.0
+margin_right = 100.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 100, 0 )
+text = "Tween X To"
+
+[node name="X" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/XTo"]
+margin_left = 104.0
+margin_right = 178.0
+margin_bottom = 24.0
+min_value = -10.0
+max_value = 10.0
+step = 0.01
+
+[node name="Y" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/XTo"]
+margin_left = 182.0
+margin_right = 256.0
+margin_bottom = 24.0
+min_value = -10.0
+max_value = 10.0
+step = 0.01
+value = 1.0
+
+[node name="Z" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/XTo"]
+margin_left = 260.0
+margin_right = 334.0
+margin_bottom = 24.0
+min_value = -10.0
+max_value = 10.0
+step = 0.01
+
+[node name="YTo" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/Vectors"]
+margin_top = 56.0
+margin_right = 494.0
+margin_bottom = 80.0
+
+[node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/Vectors/YTo"]
+margin_top = 5.0
+margin_right = 100.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 100, 0 )
+text = "Tween Y To"
+
+[node name="X" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/YTo"]
+margin_left = 104.0
+margin_right = 178.0
+margin_bottom = 24.0
+min_value = -10.0
+max_value = 10.0
+step = 0.01
+
+[node name="Y" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/YTo"]
+margin_left = 182.0
+margin_right = 256.0
+margin_bottom = 24.0
+min_value = -10.0
+max_value = 10.0
+step = 0.01
+
+[node name="Z" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/YTo"]
+margin_left = 260.0
+margin_right = 334.0
+margin_bottom = 24.0
+min_value = -10.0
+max_value = 10.0
+step = 0.01
+value = 1.0
+
+[node name="HSeparator2" type="HSeparator" parent="Control/PanelContainer/MarginContainer/Vectors"]
+margin_top = 84.0
+margin_right = 494.0
+margin_bottom = 88.0
+
+[node name="X" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/Vectors"]
+margin_top = 92.0
+margin_right = 494.0
+margin_bottom = 116.0
+
+[node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/Vectors/X"]
+margin_top = 5.0
+margin_right = 100.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 100, 0 )
+text = "X (Red)"
+
+[node name="X" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/X"]
+margin_left = 104.0
+margin_right = 178.0
+margin_bottom = 24.0
+min_value = -10.0
+max_value = 10.0
+step = 0.01
+value = 1.0
+
+[node name="Y" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/X"]
+margin_left = 182.0
+margin_right = 256.0
+margin_bottom = 24.0
+min_value = -10.0
+max_value = 10.0
+step = 0.01
+
+[node name="Z" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/X"]
+margin_left = 260.0
+margin_right = 334.0
+margin_bottom = 24.0
+min_value = -10.0
+max_value = 10.0
+step = 0.01
+
+[node name="Length" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/X"]
+margin_left = 338.0
+margin_right = 412.0
+margin_bottom = 24.0
+min_value = 0.01
+max_value = 10.0
+step = 0.01
+value = 1.0
+
+[node name="Normalize" type="Button" parent="Control/PanelContainer/MarginContainer/Vectors/X"]
+margin_left = 416.0
+margin_right = 494.0
+margin_bottom = 24.0
+text = "Normalize"
+
+[node name="Y" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/Vectors"]
+margin_top = 120.0
+margin_right = 494.0
+margin_bottom = 144.0
+
+[node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/Vectors/Y"]
+margin_top = 5.0
+margin_right = 100.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 100, 0 )
+text = "Y (Green)"
+
+[node name="X" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/Y"]
+margin_left = 104.0
+margin_right = 178.0
+margin_bottom = 24.0
+min_value = -10.0
+max_value = 10.0
+step = 0.01
+
+[node name="Y" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/Y"]
+margin_left = 182.0
+margin_right = 256.0
+margin_bottom = 24.0
+min_value = -10.0
+max_value = 10.0
+step = 0.01
+value = 1.0
+
+[node name="Z" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/Y"]
+margin_left = 260.0
+margin_right = 334.0
+margin_bottom = 24.0
+min_value = -10.0
+max_value = 10.0
+step = 0.01
+
+[node name="Length" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/Y"]
+margin_left = 338.0
+margin_right = 412.0
+margin_bottom = 24.0
+min_value = 0.01
+max_value = 10.0
+step = 0.01
+value = 1.0
+
+[node name="Normalize" type="Button" parent="Control/PanelContainer/MarginContainer/Vectors/Y"]
+margin_left = 416.0
+margin_right = 494.0
+margin_bottom = 24.0
+text = "Normalize"
+
+[node name="HSeparator" type="HSeparator" parent="Control/PanelContainer/MarginContainer/Vectors"]
+margin_top = 148.0
+margin_right = 494.0
+margin_bottom = 152.0
+
+[node name="Z" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/Vectors"]
+margin_top = 156.0
+margin_right = 494.0
+margin_bottom = 180.0
+
+[node name="Label" type="Label" parent="Control/PanelContainer/MarginContainer/Vectors/Z"]
+margin_top = 5.0
+margin_right = 100.0
+margin_bottom = 19.0
+rect_min_size = Vector2( 100, 0 )
+text = "Result (Blue)"
+
+[node name="X" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/Z"]
+margin_left = 104.0
+margin_right = 178.0
+margin_bottom = 24.0
+min_value = -1000.0
+max_value = 1000.0
+step = 0.01
+editable = false
+
+[node name="Y" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/Z"]
+margin_left = 182.0
+margin_right = 256.0
+margin_bottom = 24.0
+min_value = -1000.0
+max_value = 1000.0
+step = 0.01
+editable = false
+
+[node name="Z" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/Z"]
+margin_left = 260.0
+margin_right = 334.0
+margin_bottom = 24.0
+min_value = -1000.0
+max_value = 1000.0
+step = 0.01
+value = 1.0
+editable = false
+
+[node name="Length" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/Z"]
+margin_left = 338.0
+margin_right = 412.0
+margin_bottom = 24.0
+max_value = 1000.0
+step = 0.01
+value = 1.0
+editable = false
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource( 1 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="WorldEnvironment"]
+transform = Transform( 0.153474, -0.950407, 0.270503, 0.468999, 0.311008, 0.826628, -0.869762, 0, 0.493471, 0, 0, 0 )
+
+[node name="CameraPivot" type="Spatial" parent="."]
+
+[node name="Camera" type="Camera" parent="CameraPivot"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.57911 )
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+material_override = SubResource( 2 )
+
+[node name="CSGSphere" type="CSGSphere" parent="."]
+radius = 0.1
+radial_segments = 32
+rings = 16
+
+[node name="Tween" type="Tween" parent="."]
