@@ -63,8 +63,9 @@ value = 3.0
 
 [node name="Play" type="Button" parent="Control/PanelContainer/MarginContainer/Vectors/Animation"]
 margin_left = 182.0
-margin_right = 220.0
+margin_right = 256.0
 margin_bottom = 24.0
+rect_min_size = Vector2( 74, 0 )
 text = "Play"
 
 [node name="XTo" type="HBoxContainer" parent="Control/PanelContainer/MarginContainer/Vectors"]
@@ -303,6 +304,11 @@ max_value = 1000.0
 step = 0.01
 value = 1.0
 editable = false
+
+[node name="Operation" type="OptionButton" parent="Control/PanelContainer/MarginContainer/Vectors/Z"]
+margin_left = 416.0
+margin_right = 445.0
+margin_bottom = 24.0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 1 )

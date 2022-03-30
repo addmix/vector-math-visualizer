@@ -42,6 +42,10 @@ func _ready() -> void:
 	
 	tween.connect("tween_completed", self, "on_tween_completed")
 	tween.connect("tween_step", self, "tween_step")
+	
+	_setup_operations()
+	operation_selector.connect("item_selected", self, "on_operator_changed")
+	update_math()
 
 func set_width(width : float = 0.1):
 	call_deferred("_set_width", width)
@@ -130,7 +134,7 @@ func set_z(vector : Vector3) -> void:
 	zl.value = vector.length()
 
 func update_math() -> void:
-	set_z(x.get_vector().cross(y.get_vector()))
+	set_z(operation(x.get_vector(), y.get_vector()))
 
 #code for the horizon-aligned unit grid
 var grid_size := 20.0
@@ -217,3 +221,60 @@ func tween_step(object : Object, key : NodePath, elapsed : float, _value : float
 func on_tween_completed(object, key) -> void:
 	yield(get_tree().create_timer(1.0), "timeout")
 	$Control.show()
+
+
+
+
+#operation selector
+onready var operation_selector : OptionButton = $Control/PanelContainer/MarginContainer/Vectors/Z/Operation
+
+func _setup_operations() -> void:
+	operation_selector.add_item("addition", 0)
+	operation_selector.add_item("subtraction", 1)
+	operation_selector.add_item("multiplication", 2)
+	operation_selector.add_item("division", 3)
+	operation_selector.add_item("cross", 4)
+	#questionable
+	operation_selector.add_item("dot", 5)
+	operation_selector.select(0)
+
+func operation(a : Vector3, b : Vector3) -> Vector3:
+	match operation_selector.selected:
+		0:
+			#set Y vector's position to tip of X
+			y.origin = x.get_vector()
+			return a + b
+		1:
+			#set Y vector's position to tip of X
+			y.origin = x.get_vector()# - y.get_vector()
+			return a - b
+		2:
+			#set Y vector's position to origin
+			y.origin = Vector3.ZERO
+			return a * b
+		3:
+			#set Y vector's position to origin
+			y.origin = Vector3.ZERO
+			if b.x == 0.0 or b.y == 0.0 or b.z == 0.0:
+				return Vector3.ZERO
+			else:
+				return a / b
+		4:
+			#set Y vector's position to origin
+			y.origin = Vector3.ZERO
+			return a.cross(b)
+		5:
+			#set Y vector's position to origin
+			y.origin = Vector3.ZERO
+			return Vector3(a.dot(b), 0, 0)
+		_:
+			y.origin = Vector3.ZERO
+			return Vector3.ZERO
+
+func on_operator_changed(index : int) -> void:
+	update_math()
+
+
+
+
+
