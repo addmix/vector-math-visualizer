@@ -157,7 +157,7 @@ onready var camera_pivot : Spatial = $CameraPivot
 func _unhandled_input(event : InputEvent) -> void:
 	if event is InputEventMouseMotion:
 		#if right click
-		if Input.is_mouse_button_pressed(2):
+		if Input.is_mouse_button_pressed(1):
 			camera_pivot.rotation_degrees.x = clamp(camera_pivot.rotation_degrees.x - event.relative.y, -90, 90)
 			camera_pivot.rotation_degrees.y -= event.relative.x
 
