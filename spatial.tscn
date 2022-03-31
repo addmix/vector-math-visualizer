@@ -157,6 +157,7 @@ margin_top = 5.0
 margin_right = 100.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 100, 0 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
 text = "X (Red)"
 
 [node name="X" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/X"]
@@ -209,6 +210,7 @@ margin_top = 5.0
 margin_right = 100.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 100, 0 )
+custom_colors/font_color = Color( 0, 1, 0, 1 )
 text = "Y (Green)"
 
 [node name="X" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/Y"]
@@ -266,6 +268,7 @@ margin_top = 5.0
 margin_right = 100.0
 margin_bottom = 19.0
 rect_min_size = Vector2( 100, 0 )
+custom_colors/font_color = Color( 0, 0, 1, 1 )
 text = "Result (Blue)"
 
 [node name="X" type="SpinBox" parent="Control/PanelContainer/MarginContainer/Vectors/Z"]
