@@ -223,8 +223,6 @@ func on_tween_completed(object, key) -> void:
 	$Control.show()
 
 
-
-
 #operation selector
 onready var operation_selector : OptionButton = $Control/PanelContainer/MarginContainer/Vectors/Z/Operation
 
